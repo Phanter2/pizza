@@ -20,13 +20,18 @@ def start(order):
         pass
     else:
         print("Please enter cash or credit?")
-    input("(Press enter to continue)")
+        input("(Press enter to continue)")
 
     # Get the total price
     # Add tax
     # Accept payment
     # Give change
-
+def save(order):
+    with open("pizza.dat", "a") as orders:
+        for pizza in order:
+            orders.write(f"{pizza.quantity}, {pizza.type}, {pizza.size}, {pizza.price}, ")
+        orders.write(f"{total}")
+        orders.write("\n")
 
     print("This is the checkout")
     
